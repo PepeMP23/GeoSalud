@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Locations con Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <a href="map.html">Inicio</a>
+        <a href="zones.html">Zonas</a>
+        <a href="usuarios.html">Usuarios</a>
+        <button id="logout-btn">Cerrar sesión</button>
+    </nav>
+
+
+    <h1>Bienvenido a GeoSalud</h1>
+    <h2>Mapa de Puntos de Interes</h2>
+    <div id="map"></div>
+
+    <form id="place-form">
+        <input type="text" id="name" placeholder="Nombre del lugar" required>
+        <input type="text" id="description" placeholder="Descripción" required>
+        <input type="hidden" id="lat">
+        <input type="hidden" id="lng">
+        <button type="submit">Guardar Lugar</button>
+    </form>
+
+    <hr>
+
+    <h2>Buscar lugar por nombre</h2>
+    <input type="text" id="search-input" placeholder="Escribe el nombre">
+    <button onclick="searchPlaces()">Buscar</button>
+
+    <h2>Ubicaciones registradas</h2>
+    <table border="1" id="places-table">
+    <thead>
+        <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Latitud</th>
+        <th>Longitud</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- se llenará con JS -->
+    </tbody>
+    </table>
+
+    <div id="edit-section">
+        <h2>Editar lugar por ID</h2>
+        <input type="text" id="edit-id" placeholder="ID del lugar">
+        <input type="text" id="edit-name" placeholder="Nuevo nombre">
+        <input type="text" id="edit-description" placeholder="Nueva descripción">
+        <button onclick="editPlace()">Editar Lugar</button>
+    </div>
+
+    <div id="delete-section">
+        <h2>Eliminar lugar por ID</h2>
+        <input type="text" id="delete-id" placeholder="ID del lugar a eliminar">
+        <button onclick="deletePlace()">Eliminar Lugar</button>
+    </div>
+
+
+    <!-- Leaflet.draw CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+
+    <!-- Leaflet.draw JS -->
+    <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

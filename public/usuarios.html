@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Registrados</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="map.html">Inicio</a>
+        <a href="zones.html">Zonas</a>
+        <a href="usuarios.html">Usuarios</a>
+        <button id="logout-btn">Cerrar sesión</button>
+    </nav>
+
+    
+    <h1>Gestión de Usuarios</h1>
+
+    <section>
+        <h2>Registrar nuevo usuario</h2>
+        <input type="text" id="user-name" placeholder="Nombre completo">
+        <input type="text" id="user-username" placeholder="Usuario">
+        <input type="password" id="user-password" placeholder="Contraseña">
+        <button onclick="createUser()">Registrar Usuario</button>
+    </section>
+
+    <section>
+        <h2>Usuarios registrados</h2>
+        <table border="1" id="users-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Usuario</th>
+            </tr>
+        </thead>
+        <tbody id="users-table-body">
+            <!-- Llenado dinámico -->
+        </tbody>
+        </table>
+    </section>
+    
+
+    <section>
+        <h2>Editar usuario</h2>
+        <input type="text" id="edit-user-id" placeholder="ID del usuario">
+        <input type="text" id="edit-user-name" placeholder="Nuevo nombre">
+        <input type="text" id="edit-user-username" placeholder="Nuevo usuario">
+        <input type="password" id="edit-user-password" placeholder="Nueva contraseña">
+        <button onclick="editUser()">Actualizar Usuario</button>
+    </section>
+
+    <section>
+        <h2>Eliminar usuario</h2>
+        <input type="text" id="delete-user-id" placeholder="ID del usuario a eliminar">
+        <button onclick="deleteUser()">Eliminar Usuario</button>
+    </section>
+
+    <script src="js/usuarios.js"></script>
+</body>
+</html>

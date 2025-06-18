@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zonas Registradas</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+      <a href="map.html">Inicio</a>
+      <a href="zones.html">Zonas</a>
+      <a href="usuarios.html">Usuarios</a>
+      <button id="logout-btn">Cerrar sesión</button>
+    </nav>
+
+
+    <h1>Bienvenido a GeoSalud</h1>
+    <h2>Mapa de Zonas Registradas</h2>
+    <div id="map"></div>
+
+    <hr>
+
+    <h2>Buscar zona por nombre</h2>
+    <input type="text" id="search-zone-input" placeholder="Escribe el nombre">
+    <button onclick="searchZones()">Buscar</button>
+
+    <h2>Zonas almacenadas</h2>
+    <table border="1" id="zones-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+          <!-- se llenará con JS -->
+        </tbody>
+    </table>
+
+    <div id="edit-zone-section">
+        <h2>Editar zona por ID</h2>
+        <input type="text" id="edit-zone-id" placeholder="ID de la zona">
+        <input type="text" id="edit-zone-name" placeholder="Nuevo nombre">
+        <input type="text" id="edit-zone-description" placeholder="Nueva descripción">
+        <button onclick="editZone()">Editar Zona</button>
+    </div>
+
+    <div id="delete-section">
+        <h2>Eliminar zona por ID</h2>
+        <input type="text" id="delete-zone-id" placeholder="ID de la zona a eliminar">
+        <button onclick="deleteZone()">Eliminar Zona</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+    <script src="js/zones.js"></script>
+</body>
+</html>
